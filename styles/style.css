@@ -388,3 +388,82 @@ h2 {
     max-width: 280px;
   }
 }
+
+/* Checkbox oculto */
+.menu-toggle {
+  display: none;
+}
+
+/* Botón hamburguesa (solo en móvil) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Menú de navegación */
+.nav--center {
+  display: flex;
+  gap: 1.8rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+}
+
+/* --- Responsive: Móvil --- */
+@media (max-width: 768px) {
+  .nav--container {
+    padding: 1rem;
+  }
+
+  /* Mostrar hamburguesa */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Esconder menú por defecto */
+  .nav--center {
+    position: fixed;
+    top: 0;
+    right: -100%; /* fuera de vista */
+    height: 100vh;
+    width: 70%;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.3rem;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+    z-index: 15;
+  }
+
+  /* Mostrar menú cuando el checkbox está checked */
+  .menu-toggle:checked ~ .nav--center {
+    right: 0;
+  }
+
+  /* Efecto animado en el ícono (☰ → ×) */
+  .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
