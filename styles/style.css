@@ -394,9 +394,9 @@ h2 {
   display: none;
 }
 
-/* --- Menú hamburguesa (solo CSS) --- */
+/* --- Menú hamburguesa --- */
 .menu-toggle {
-  display: none; /* oculto en escritorio */
+  display: none;
 }
 
 .hamburger {
@@ -420,23 +420,26 @@ h2 {
 
 /* Menú normal en escritorio */
 .nav--center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 1.8rem;
   font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
+  z-index: 10;
 }
 
 /* --- Responsive: Móvil (max-width: 768px) --- */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  /* Esconder el menú por defecto */
   .nav--center {
+    /* Anula el position:absolute de escritorio */
     position: fixed;
     top: 0;
-    right: -100%; /* ← clave: empieza fuera de vista */
+    left: auto;
+    right: -100%;
+    bottom: auto;
+    transform: none;
     width: 70%;
     height: 100vh;
     background: white;
@@ -449,13 +452,43 @@ h2 {
     transition: right 0.4s ease;
     z-index: 15;
   }
+  @media (max-width: 768px) {
+  .nav--center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* --- ANULA PROPIEDADES DE ESCRITORIO --- */
+    left: auto;
+    transform: none;
+    /* -------------------------------------- */
+    width: 70%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.4rem;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+    z-index: 15;
+  }
+}
 
-  /* Mostrar menú SOLO cuando el checkbox está checked */
-  .menu-toggle:checked ~ .nav--center {
-    right: 0; /* ← solo entonces entra */
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
   }
 
-  /* Animación del ícono ☰ → × */
+  .menu-toggle:checked ~ .nav--center {
+    right: 0;
+  }
+
+  /* Animación del ícono */
   .menu-toggle:checked ~ .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
