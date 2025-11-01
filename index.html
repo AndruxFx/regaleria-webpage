@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vicia's Accesorios & Regalería</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav--container">
+      <div class="nav--left">
+        <div class="logo-container">
+          <span class="logo-text">Vicia's</span>
+        </div>
+      </div>
+      <div class="nav--center">
+        <a href="#inicio">Inicio</a>
+        <a href="#natura">Productos Natura</a>
+        <a href="#regalos">Regalos</a>
+        <a href="#otros">Otros productos</a>
+        <a href="#contacto">Visitános</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Carrusel -->
+    <section id="inicio" class="inicio-section">
+      <div class="hero-slider">
+        <input type="radio" name="slider" id="slide1" checked />
+        <input type="radio" name="slider" id="slide2" />
+        <input type="radio" name="slider" id="slide3" />
+        <div class="slides">
+          <img src="images/slide1.jpg" alt="Regalo artesanal 1" />
+          <img src="images/slide2.jpg" alt="Caja de regalo decorada" />
+          <img src="images/slide3.jpg" alt="Accesorios y productos Natura" />
+        </div>
+        <div class="slider-nav">
+          <label for="slide1"></label>
+          <label for="slide2"></label>
+          <label for="slide3"></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Natura -->
+    <section id="natura" class="natura-section">
+      <div class="section-container">
+        <h2>Productos Natura</h2>
+        <p class="section-subtitle">
+          Perfumes, cremas, jabones y más de la reconocida marca brasileña.
+        </p>
+        <div class="natura-grid">
+          <div class="natura-card">
+            <img src="images/perfumes.jpg" alt="Perfumes Natura" />
+            <h3>Perfumes</h3>
+            <p>Ekos, Charme, Floratta y más.</p>
+          </div>
+          <div class="natura-card">
+            <img src="images/cremas.jpg" alt="Cremas corporales Natura" />
+            <h3>Cremas corporales</h3>
+            <p>Hidratación intensa con manteca de karité y cupuaçu.</p>
+          </div>
+          <div class="natura-card">
+            <img src="images/jabones.jpg" alt="Jabones Natura" />
+            <h3>Jabones</h3>
+            <p>En barra y líquidos, con aromas frescos.</p>
+          </div>
+        </div>
+        <p class="section-note">*Visitá Vicia's para ver toda la línea disponible.</p>
+        <div class="button-center">
+          <a href="https://wa.me/5492615585449?text=Hola!%20Quisiera%20el%20cat%C3%A1logo%20actual%20de%20Natura." 
+            class="whatsapp-button" 
+            target="_blank"
+            rel="noopener">
+            <i class="fab fa-whatsapp"></i> Pedir catálogo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regalos (6 tarjetas) -->
+    <section id="regalos" class="gifts-section">
+      <div class="section-container">
+        <h2>Regalos para cada ocasión</h2>
+        <p class="section-subtitle">Detalles únicos para los momentos que más importan.</p>
+        <div class="gifts-grid">
+          <div class="gift-card">
+            <img src="images/primavera.jpg" alt="Primavera">
+            <div class="gift-icon">🌸</div>
+            <h3>Primavera</h3>
+            <p>Rosas, cactus y aromatizantes florales.</p>
+          </div>
+          <div class="gift-card">
+            <img src="images/navidad.jpg" alt="Navidad">
+            <div class="gift-icon">🎄</div>
+            <h3>Navidad</h3>
+            <p>Cajas temáticas y decoración.</p>
+          </div>
+          <div class="gift-card">
+            <img src="images/dia-de-la-madre.jpg" alt="Día de la Madre">
+            <div class="gift-icon">👩</div>
+            <h3>Día de la Madre</h3>
+            <p>Cremas, velas y envoltorios con cariño.</p>
+          </div>
+          <div class="gift-card">
+            <img src="images/dia-del-padre.jpg" alt="Día del Padre">
+            <div class="gift-icon">👨</div>
+            <h3>Día del Padre</h3>
+            <p>Perfumes, kits de asado y detalles prácticos.</p>
+          </div>
+          <div class="gift-card">
+            <img src="images/para-ninos.jpg" alt="Para los más chiquitos">
+            <div class="gift-icon">🧒</div>
+            <h3>Para los más chiquitos</h3>
+            <p>Útiles, juguetes y cartas a Reyes.</p>
+          </div>
+          <div class="gift-card">
+            <img src="images/cumpleanos.jpg" alt="Cumpleaños">
+            <div class="gift-icon">🎂</div>
+            <h3>Cumpleaños</h3>
+            <p>Cajas personalizadas y detalles únicos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Otros productos -->
+    <section id="otros" class="other-products">
+      <div class="section-container">
+        <h2>Y mucho más en la tienda</h2>
+        <p class="section-subtitle">Productos y servicios para el día a día.</p>
+        <div class="products-list">
+          <div class="product-item">
+            <div class="product-icon">✏️</div>
+            <div>
+              <h3>Útiles escolares</h3>
+              <p>Hojas, cartulinas y lápices.</p>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-icon">🕯️</div>
+            <div>
+              <h3>Aromatizantes</h3>
+              <p>Varitas, conos y difusores.</p>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-icon">🌵</div>
+            <div>
+              <h3>Plantas decorativas</h3>
+              <p>Cactus y suculentas.</p>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-icon">🎁</div>
+            <div>
+              <h3>Envoltorios</h3>
+              <p>Papel lindo y cintas para regalos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visitános -->
+    <section id="contacto" class="visit-us">
+      <div class="section-container">
+        <h2>Visitános</h2>
+        <p class="section-subtitle">Estamos en el corazón del barrio.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <p><strong>Dirección:</strong> Calle Falsa 123, Córdoba</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <p><strong>Horarios:</strong> Lunes a sábado, 9 a 19 hs</p>
+          </div>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d295.4551426046417!2d-68.79813075386932!3d-32.8671353050794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0f1a503104e9%3A0x2c37f1864941c1fb!2sVicia's%20Accesorios!5e1!3m2!1ses-419!2sar!4v1762030400031!5m2!1ses-419!2sar"
+            width="100%"
+            height="250"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="button-center">
+          <a href="https://wa.me/5492615585449?text=Hola!%20Quisiera%20saber%20m%C3%A1s%20sobre%20Vicia's." class="whatsapp-button" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Escribinos por WhatsApp
+          </a>
+        </div>
+        <p class="visit-note">¡Visitános en la tienda! Todos los productos se retiran en persona.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="section-container">
+      <p>Vicia's — Detalles hechos con cariño para cada ocasión.</p>
+      <p>&copy; 2025 Vicia's Accesorios & Regalería</p>
+    </div>
+  </footer>
+</body>
+</html>
