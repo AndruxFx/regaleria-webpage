@@ -13,24 +13,23 @@
 <body>
   <header>
     <nav class="nav--container">
-      <!-- Logo -->
       <div class="nav--left">
         <div class="logo-container">
           <span class="logo-text">Vicia's</span>
         </div>
       </div>
 
-      <!-- Botón hamburguesa (solo visible en móvil) -->
+      <!-- 1. Checkbox OCULTO -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+      <!-- 2. Botón hamburguesa -->
       <label for="menu-toggle" class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </label>
 
-      <!-- Checkbox oculto -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-
-      <!-- Menú de navegación -->
+      <!-- 3. Menú (DEBE estar DESPUÉS del checkbox y del label) -->
       <div class="nav--center">
         <a href="#inicio">Inicio</a>
         <a href="#natura">Productos Natura</a>
