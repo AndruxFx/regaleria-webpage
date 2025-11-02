@@ -222,28 +222,32 @@
     </div>
   </footer>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.getElementById('menu-toggle');
-      const navLinks = document.querySelectorAll('.nav--center a');
-      const navCenter = document.querySelector('.nav--center');
+    try {
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        if (!menuToggle) return; // Si no existe, salir
 
-      // Cerrar menú al hacer clic en un enlace
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          menuToggle.checked = false;
+        const navLinks = document.querySelectorAll('.nav--center a');
+        const navCenter = document.querySelector('.nav--center');
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            menuToggle.checked = false;
+          });
+        });
+
+        document.addEventListener('click', (event) => {
+          const isClickInsideNav = navCenter && navCenter.contains(event.target);
+          const isClickOnHamburger = event.target.closest('.hamburger');
+          
+          if (!isClickInsideNav && !isClickOnHamburger && menuToggle.checked) {
+            menuToggle.checked = false;
+          }
         });
       });
-
-      // Cerrar menú al hacer clic fuera del menú
-      document.addEventListener('click', (event) => {
-        const isClickInsideNav = navCenter.contains(event.target);
-        const isClickOnHamburger = event.target.closest('.hamburger');
-        
-        if (!isClickInsideNav && !isClickOnHamburger && menuToggle.checked) {
-          menuToggle.checked = false;
-        }
-      });
-    });
+    } catch (e) {
+      console.error("Error en el menú:", e);
+    }
   </script>
 </body>
 </html>
