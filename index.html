@@ -19,17 +19,17 @@
         </div>
       </div>
 
-      <!-- 1. Checkbox OCULTO -->
+      <!-- Checkbox oculto -->
       <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
-      <!-- 2. Botón hamburguesa -->
+      <!-- Ícono hamburguesa -->
       <label for="menu-toggle" class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </label>
 
-      <!-- 3. Menú (DEBE estar DESPUÉS del checkbox y del label) -->
+      <!-- Menú de navegación -->
       <div class="nav--center">
         <a href="#inicio">Inicio</a>
         <a href="#natura">Productos Natura</a>
@@ -222,32 +222,29 @@
     </div>
   </footer>
   <script>
-    try {
-      document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.getElementById('menu-toggle');
-        if (!menuToggle) return; // Si no existe, salir
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      if (!menuToggle) return;
 
-        const navLinks = document.querySelectorAll('.nav--center a');
-        const navCenter = document.querySelector('.nav--center');
+      const navLinks = document.querySelectorAll('.nav--center a');
+      const navCenter = document.querySelector('.nav--center');
 
-        navLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            menuToggle.checked = false;
-          });
-        });
-
-        document.addEventListener('click', (event) => {
-          const isClickInsideNav = navCenter && navCenter.contains(event.target);
-          const isClickOnHamburger = event.target.closest('.hamburger');
-          
-          if (!isClickInsideNav && !isClickOnHamburger && menuToggle.checked) {
-            menuToggle.checked = false;
-          }
+      // Cerrar al hacer clic en un enlace
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.checked = false;
         });
       });
-    } catch (e) {
-      console.error("Error en el menú:", e);
-    }
+
+      // Cerrar al hacer clic fuera
+      document.addEventListener('click', (e) => {
+        const clickInsideNav = navCenter.contains(e.target);
+        const clickOnHamburger = e.target.closest('.hamburger');
+        if (!clickInsideNav && !clickOnHamburger && menuToggle.checked) {
+          menuToggle.checked = false;
+        }
+      });
+    });
   </script>
 </body>
 </html>

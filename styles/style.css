@@ -394,101 +394,65 @@ h2 {
   display: none;
 }
 
-/* --- Menú hamburguesa --- */
+/* --- Menú hamburguesa: base (escritorio) --- */
 .menu-toggle {
   display: none;
 }
-
 .hamburger {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  z-index: 20;
 }
 
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Menú normal en escritorio */
-.nav--center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1.8rem;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.1rem;
-  z-index: 10;
-}
-
-/* --- Responsive: Móvil (max-width: 768px) --- */
+/* --- Móvil: hasta 768px --- */
 @media (max-width: 768px) {
-  .nav--center {
-    /* Anula el position:absolute de escritorio */
-    position: fixed;
-    top: 0;
-    left: auto;
-    right: -100%;
-    bottom: auto;
-    transform: none;
-    width: 70%;
-    height: 100vh;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    font-size: 1.4rem;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
-    transition: right 0.4s ease;
-    z-index: 15;
-  }
-  @media (max-width: 768px) {
-  .nav--center {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    /* --- ANULA PROPIEDADES DE ESCRITORIO --- */
-    left: auto;
-    transform: none;
-    /* -------------------------------------- */
-    width: 70%;
-    height: 100vh;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    font-size: 1.4rem;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
-    transition: right 0.4s ease;
-    z-index: 15;
-  }
-}
-
   .hamburger {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
     position: absolute;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
   }
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
 
+  /* Menú oculto por defecto */
+  .nav--center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.4rem;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+    z-index: 15;
+    /* Anular estilos de escritorio */
+    left: auto;
+    transform: none;
+  }
+
+  /* Mostrar menú cuando el checkbox está checked */
   .menu-toggle:checked ~ .nav--center {
     right: 0;
   }
 
-  /* Animación del ícono */
+  /* Animación del ícono ☰ → × */
   .menu-toggle:checked ~ .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
@@ -497,5 +461,10 @@ h2 {
   }
   .menu-toggle:checked ~ .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Ajustar logo en móvil */
+  .nav--left {
+    z-index: 20;
   }
 }
