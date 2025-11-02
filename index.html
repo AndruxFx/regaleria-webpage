@@ -221,5 +221,29 @@
       <p>&copy; 2025 Vicia's Accesorios & Regalería</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.querySelectorAll('.nav--center a');
+      const navCenter = document.querySelector('.nav--center');
+
+      // Cerrar menú al hacer clic en un enlace
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.checked = false;
+        });
+      });
+
+      // Cerrar menú al hacer clic fuera del menú
+      document.addEventListener('click', (event) => {
+        const isClickInsideNav = navCenter.contains(event.target);
+        const isClickOnHamburger = event.target.closest('.hamburger');
+        
+        if (!isClickInsideNav && !isClickOnHamburger && menuToggle.checked) {
+          menuToggle.checked = false;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
