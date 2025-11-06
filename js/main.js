@@ -2,9 +2,25 @@ const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
 
-abrir.addEventListener ("click",() =>{
-    nav.classList.add("visible")
-})
-cerrar.addEventListener ("click",() =>{
-    nav.classList.remove("visible")
-})
+if (!nav || !abrir || !cerrar) {
+  console.error("⚠️ Alguno de los elementos no se encontró. Revisa los IDs en HTML.");
+}
+
+// Abrir menú
+abrir.addEventListener("click", (e) => {
+  e.stopPropagation();
+  nav.classList.add("visible");
+});
+
+// Cerrar menú
+cerrar.addEventListener("click", (e) => {
+  e.stopPropagation(); 
+  nav.classList.remove("visible");
+});
+
+// Cerrar al hacer clic FUERA
+document.addEventListener("click", (e) => {
+  if (nav.classList.contains("visible")) {
+    nav.classList.remove("visible");
+  }
+});
