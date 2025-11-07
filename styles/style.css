@@ -24,18 +24,22 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  background-color: #f1e9e9;
- 
+  background-color: #f7f4f4;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.05),   /* sombra muy tenue */
+    0 4px 12px rgba(0, 0, 0, 0.08);  /* profundidad sutil */
+
+  /* Borde inferior brillante (opcional pero lindo) */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  
+  /* Para que no se pegue al borde superior */
+  padding: 0.8rem 1rem;
+
 }
 .logo {
   max-width: 10rem;
 }
-.logo-text {
-  color: #d68674;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
+
 .nav--list {
   list-style-type: none;
   display: flex;
@@ -128,6 +132,7 @@ h2 {
 /* Natura */
 .natura-section {
   padding: 4rem 0;
+  margin-top: 2rem;
   background-color: #fff9f7;
 }
 .natura-grid {
@@ -374,6 +379,7 @@ h2 {
   .nav--list{
      flex-direction: column;
      align-items: end;
+     padding-right: 1rem;
   }
   .nav--list a {
     color: #eee;
