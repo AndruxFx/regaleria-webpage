@@ -12,27 +12,38 @@ body {
   font-family: 'Epilogue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
-
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* Header */
 .header--container {
+  z-index: 3;
+  max-width: 85%;
+  min-width: 85%;
   margin-top: 2rem;
   padding: 0.8rem 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #f8efef;
+  justify-content: center;
+  background-color: #ffffff;
   box-shadow: 
     0 1px 2px rgba(0, 0, 0, 0.05),   /* sombra muy tenue */
     0 4px 12px rgba(0, 0, 0, 0.08);  /* profundidad sutil */
+    border-radius: 30px;
 
   /* Borde inferior brillante (opcional pero lindo) */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
   
 
 }
@@ -50,6 +61,11 @@ a {
 
 }
 
+.inicio-section {
+  margin-top: 4rem;
+  position: absolute;
+
+}
 
 /* Secciones comunes */
 .section-container {
@@ -74,15 +90,15 @@ h2 {
 }
 
 /* Carrusel */
-.inicio-section {
-  margin-top: 2rem;
-}
+
 .hero-slider {
+  transform: translate(0%, -18%);
   position: relative;
-  width: 100%;
-  max-width: 1200px;
+  width: 87%;
+  min-width: 87%;
+  max-width: 87%;
   margin: 0 auto;
-  height: 50vh;
+  height: 65vh;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -105,7 +121,7 @@ h2 {
 }
 .slider-nav {
   position: absolute;
-  bottom: 15px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -133,7 +149,7 @@ h2 {
 /* Natura */
 .natura-section {
   padding: 4rem 0;
-  margin-top: 2rem;
+  margin-top: 32rem;
   background-color: #fff9f7;
 }
 .natura-grid {
@@ -354,6 +370,7 @@ h2 {
   color: #ececec;
 }
   .nav{
+  
     opacity: 0;
     visibility: hidden;
     z-index: 1;
