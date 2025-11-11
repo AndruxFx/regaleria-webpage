@@ -28,7 +28,7 @@ a {
   padding: 0.8rem 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #ffffff;
   border-radius: 50px;
   box-shadow: 
@@ -344,7 +344,10 @@ h2 {
 .cerrar--menu {
   display: none;
 } 
-@media screen and (max-width:850px) {
+@media screen and (max-width:1000px) {
+  .header--container {
+    justify-content: left;
+  }
   .abrir--menu, 
   .cerrar--menu {
     display: block;
