@@ -37,6 +37,8 @@ const swiper = new Swiper('.swiper-hero', {
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable:true,
+    dynamicBullets:true,
   },
 
   // Navigation arrows
@@ -48,5 +50,6 @@ const swiper = new Swiper('.swiper-hero', {
   // And if we need scrollbar
   scrollbar: {
     el: '.swiper-scrollbar',
+
   },
 });
