@@ -25,6 +25,7 @@ a {
 .header--container {
   width: 80%;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 0.8rem 5rem;
   display: flex;
   align-items: center;
@@ -41,9 +42,7 @@ a {
   
 
 }
-.logo {
-  max-width: 7rem;
-}
+
 
 .nav--list {
   list-style-type: none;
@@ -77,63 +76,17 @@ h2 {
   margin: 0 auto 2rem;
   color: #555;
 }
-
-/* Carrusel */
-.inicio-section {
-  margin-top: 2rem;
+/*CARRUSEL*/
+.swiper {
+   width: 80dvi;
+  height: 30dvi;
 }
-.hero-slider {
-  position: relative;
+img.img-slider1 {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 50vh;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-.hero-slider input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-.slides {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s ease-in-out;
-}
-.slides img {
-  min-width: 100%;
-  height: 100%;
+  height: 30dvi;
   object-fit: cover;
 }
-.slider-nav {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-.slider-nav label {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.7);
-  cursor: pointer;
-}
-.slider-nav label:hover {
-  background: rgba(255,255,255,0.95);
-}
-#slide1:checked ~ .slides { transform: translateX(0); }
-#slide2:checked ~ .slides { transform: translateX(-100%); }
-#slide3:checked ~ .slides { transform: translateX(-200%); }
-#slide1:checked ~ .slider-nav label[for="slide1"],
-#slide2:checked ~ .slider-nav label[for="slide2"],
-#slide3:checked ~ .slider-nav label[for="slide3"] {
-  background: white;
-}
+
 
 /* Natura */
 .natura-section {
@@ -346,7 +299,7 @@ h2 {
 } 
 @media screen and (max-width:1000px) {
   .header--container {
-    justify-content: left;
+    justify-content:left;
   }
   .abrir--menu, 
   .cerrar--menu {
@@ -355,12 +308,14 @@ h2 {
     font-size: 2rem;
     background-color: transparent;
   } 
-.abrir--menu{
-  color: #1c1c1c;
-}
-.cerrar--menu{
-  color: #ececec;
-}
+ 
+  .abrir--menu{
+    color: #1c1c1c;
+  }
+  .cerrar--menu{
+    color: #ececec;
+  
+  }
   .nav{
     opacity: 0;
     visibility: hidden;
@@ -393,4 +348,5 @@ h2 {
   .nav--list a {
     color: #eee;
   }
+
 }
